@@ -100,6 +100,22 @@ See `.github/workflows/ci.yml` for setup and the **Actions** tab of the GitHub r
 
 ---
 
+## Credit Scoring Business Understanding
+
+### How does the Basel II Accord’s emphasis on risk measurement influence our need for an interpretable and well-documented model?
+
+The Basel II and Basel III frameworks emphasize robust credit risk measurement to ensure financial institutions maintain adequate capital reserves and manage risk exposures effectively. Basel II’s focus on risk-weighted assets and credit risk assessment requires models to be interpretable and well-documented to comply with regulatory oversight, support auditability, and align with the institution’s credit risk strategy. An interpretable model, such as Logistic Regression with Weight of Evidence (WoE), enables clear mapping of features to risk outcomes, facilitating transparency for regulators and stakeholders. Well-documented models ensure traceability of credit decisions, supporting the board’s responsibility to promote a sound credit risk management environment, as mandated by Basel III.
+
+### Why is creating a proxy variable necessary, and what are the potential business risks of making predictions based on this proxy?
+
+Without a direct "default" label in the dataset, a proxy variable (e.g., `is_high_risk` derived from RFM clustering) is essential to estimate credit risk based on behavioral patterns like low transaction recency, frequency, or monetary value. This proxy enables model training but risks misclassification if it poorly correlates with actual default behavior, as highlighted in credit risk literature. Business risks include approving high-risk customers, leading to increased loan losses, or rejecting low-risk customers, resulting in lost revenue. These errors could undermine profitability and violate Basel III’s requirement to maintain credit risk within acceptable parameters, potentially impacting the institution’s financial stability.
+
+### What are the key trade-offs between using a simple, interpretable model (like Logistic Regression with WoE) versus a complex, high-performance model (like Gradient Boosting) in a regulated financial context?
+
+In a regulated financial context, simple models like Logistic Regression with WoE offer high interpretability, aligning with Basel II and III’s emphasis on transparent credit risk assessment and governance. They allow stakeholders to understand feature contributions to risk scores, supporting compliance and audit requirements. However, they may underperform in capturing complex, non-linear patterns in data, potentially reducing predictive accuracy. Complex models like Gradient Boosting excel at modeling intricate relationships, improving performance metrics like ROC-AUC, but their "black-box" nature complicates regulatory justification and increases scrutiny from risk management and audit functions. The trade-off balances regulatory compliance and explainability against predictive power, with simpler models often preferred for their alignment with the 5 Cs of Credit and credit policy frameworks.
+
+---
+
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
